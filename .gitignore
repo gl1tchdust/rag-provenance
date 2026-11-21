@@ -1,0 +1,13 @@
+# Built artifacts. Regenerate with:
+#   python rag.py build --variant <clean|invisible|visible|legit> [--mode raw|stripped|selective]
+# Not tracked because they are 768-dimension vectors that go stale silently the
+# moment a corpus file changes, and a stale index produces plausible-looking
+# but meaningless rankings. load_index() refuses one built with a different
+# embedding model; it cannot detect an edited corpus.
+index-*.json
+
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.FORGE_LOG
